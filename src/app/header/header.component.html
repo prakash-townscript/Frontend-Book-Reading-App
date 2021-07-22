@@ -1,0 +1,15 @@
+<div class="header">
+    <img src=" https://www.townscript.com/assets/images/ts-bms-logo.svg " />
+    <div class="header-right ">
+        <div *ngIf="toggle; else elseBlock ">
+            <a routerLink="/my-library">My Library</a>
+            <a routerLink="/book"> All Books</a>
+            <a routerLink="/create-book"> Add Book</a>
+            <a routerLink="/logout"> Logout</a>
+        </div>
+        <ng-template #elseBlock>
+            <a routerLink="/login">Login |</a>
+            <a routerLink="/sign-up">Sign up</a>
+        </ng-template>
+    </div>
+</div>

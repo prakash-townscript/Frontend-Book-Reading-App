@@ -1,0 +1,37 @@
+.header {
+    background-color: #ffeb3b;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.header img {
+    margin-left: 35px;
+    height: 80px;
+    width: 150px;
+}
+
+.header-right {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+.logoutButton {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+<div class="parent">
+    <div class="tablediv">
+        <h2>Welcome to Book Gallery</h2>
+        <p>Check out our guide to the season's hottest books, reader raves, author recommendations, and more!</p>
+        <table>
+            <tr>
+                <th>Poster</th>
+                <th>Name of Book</th>
+                <th>Descrption</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+            </tr>
+            <tr *ngFor="let book of books ">
+                <td><img src={{book.image}}/></td>
+                <td>{{book.name}}</td>
+                <td>{{book.description}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.pages}}</td>
+                <td><button (click)="markAsReading(book.bookId)">
+        Read Book</button></td>
+            </tr>
+            <h3 class="emptyMsg" *ngIf="books.length===0">
+                Wow you have read all the books from our store
+            </h3>
+        </table>
+    </div>
+</div>

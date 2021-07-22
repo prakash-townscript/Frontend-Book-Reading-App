@@ -1,0 +1,41 @@
+<form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <div class="container">
+        <h2>
+            Find books from all around the world
+        </h2>
+
+        <div *ngIf="formstatus" class="wrong">
+            <h3>Please fill all the details correctly</h3>
+        </div>
+        <div *ngIf="showErrorMessage" class="wrong">
+            <h3>Account Creation Failed</h3>
+        </div>
+        <div *ngIf="showSuccessMessage" class="right">
+            <h3>Account Created</h3>
+        </div>
+
+        <label for="firstname"><b>First Name</b></label>
+        <br> <br>
+        <input type="text" formControlName="firstname" name="firstname">
+        <br>
+        <br>
+        <label for="lastname"><b>Last Name</b></label>
+        <br>
+        <input type="text" formControlName="lastname" name="lastname">
+        <br><br>
+        <label for="email"><b>Email</b></label>
+        <br>
+        <input type="text" formControlName="email" name="email">
+        <br>
+        <br>
+        <label for="password"><b>Password</b></label>
+        <br>
+        <input type="password" formControlName="password" name="password">
+
+        <br>
+        <br>
+        <div>
+            <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+    </div>
+</form>

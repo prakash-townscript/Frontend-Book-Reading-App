@@ -1,0 +1,64 @@
+<div class="parent">
+    <div class="tablediv">
+        <h2>Welcome to your Library</h2>
+        <h3>Reading Books</h3>
+
+        <div>
+            <table>
+                <tr>
+                    <th>Poster</th>
+                    <th>Name of Book</th>
+                    <th>Descrption</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Review</th>
+                    <th>Action</th>
+
+                </tr>
+                <p class="emptyMsg" *ngIf="readingBooks.length==0">
+                    No Books are in your Reading list
+                </p>
+                <tr *ngFor="let book of readingBooks">
+                    <td><img src={{book.image}}/></td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.pages}} </td>
+                    <td><a routerLink="/detail/{{book.bookId}}">Write Review</a></td>
+                    <td><button (click)="markAsComplete(book.bookId)">Mark as Complete</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <hr>
+
+        <h3>Completed Books</h3>
+
+        <div>
+            <table>
+                <tr>
+                    <th>Poster</th>
+                    <th>Name of Book</th>
+                    <th>Descrption</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Review</th>
+                    <th>Action</th>
+                </tr>
+                <p class="emptyMsg" *ngIf="completedBooks.length==0">
+                    No Books are in your Completed list
+                </p>
+                <tr *ngFor="let book of completedBooks">
+                    <td><img src={{book.image}}/></td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.pages}} </td>
+                    <td><a routerLink="/detail/{{book.bookId}}">Write Review</a></td>
+                    <td><button (click)="deleteFromReadingList(book.bookId)">Delete Book From Library</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

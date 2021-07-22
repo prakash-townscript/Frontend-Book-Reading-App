@@ -1,0 +1,35 @@
+<div class="main">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="container">
+            <h2>
+                <Label>
+              You are one stop away from Reading books
+              </Label>
+            </h2>
+            <h3>
+                <Label>
+            Find books from all around the world
+            </Label>
+            </h3>
+
+            <label for="email"><b>Email</b></label>
+            <br> <br>
+            <input type="text" formControlName="email" name="email">
+            <br> <br> <br>
+            <label for="password"><b>Password</b></label>
+            <br> <br>
+            <input type="password" formControlName="password" name="password">
+            <div class="wrong" *ngIf="showErrorMessage">
+                <h4>Wrong username and password Please try again</h4>
+            </div>
+            <div *ngIf="formstatus" class="wrong">
+                <h4>Email or Password is invalid , Try again</h4>
+            </div>
+            <br>
+            <br>
+            <div>
+                <button type="submit" class="signupbtn">Log In</button>
+            </div>
+        </div>
+    </form>
+</div>

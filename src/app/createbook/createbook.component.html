@@ -1,0 +1,28 @@
+<div class="container">
+
+    <form [formGroup]="bookForm" (ngSubmit)="createBook()">
+        <div class="container">
+            <h1>Add Book</h1>
+            <div class="wrong" *ngIf="formstatus">
+                <h3>Fill all details correctly</h3>
+            </div>
+            <div class="wrong" *ngIf="showErrorMessage">
+                <h3>Book Creation Failed</h3>
+            </div>
+            <div class="right" *ngIf="showSuccessMessage">
+                <h3>Book Created</h3>
+            </div>
+
+            <input type="text" placeholder="Book Name" formControlName="name" name="name"><br><br>
+            <input type="text" placeholder="Book Description" formControlName="description" name="description"><br><br>
+            <input type="text" placeholder="Image Url" formControlName="image" name="image"><br><br>
+            <input type="text" placeholder="Author" formControlName="author" name="author"><br><br>
+            <input type="number" placeholder="Pages" formControlName="pages" name="pages"><br><br>
+            <br>
+            <div>
+                <button type="submit " class="bookupbtn ">Create Book</button>
+            </div>
+
+        </div>
+    </form>
+</div>

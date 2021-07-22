@@ -1,0 +1,50 @@
+<div class="parent">
+
+    <div *ngIf="book">
+        <h2>Book Detail</h2>
+
+        <table>
+            <tr>
+                <th>Poster</th>
+                <th>Name of Book</th>
+                <th>Descrption</th>
+                <th>Author</th>
+                <th>Pages</th>
+            </tr>
+
+            <tr>
+                <td><img src={{book.image}}/></td>
+                <td>{{book.name}}</td>
+                <td>{{book.description}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.pages}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <h2>Reviews of this book</h2>
+
+    <div class="reviewBox">
+        <p class="emptyMsg" *ngIf="review.length<1">
+            No review available , be the first one ...
+        </p>
+        <div *ngFor="let r of review">
+            <h4>{{r.review}} - <i class="email">{{r.email}}
+            </i>
+            </h4>
+            <hr>
+        </div>
+
+    </div>
+
+    <form [formGroup]="reviewForm" (ngSubmit)="addReview()">
+        <div class="container">
+            <h3>Add review to this book</h3>
+            <textarea [formControlName]="'name'" name="name" rows="5" cols="500">One of the best book i have ever read...
+        </textarea>
+            <div>
+                <button type="submit">Submit Review</button>
+            </div>
+        </div>
+    </form>
+</div>

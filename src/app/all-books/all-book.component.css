@@ -1,0 +1,42 @@
+table {
+    border: 3px solid rgb(224, 186, 36);
+}
+
+.parent {
+    padding: 70px;
+}
+
+.tablediv {
+    width: 100%;
+}
+
+th,
+td {
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #fffde7
+}
+
+.emptyMsg {
+    margin-left: 10px;
+    color: red;
+    font-style: italic;
+}
+
+button {
+    background-color: #f57f17;
+    border: none;
+    color: white;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+img {
+    height: 100px;
+    width: 80px;
+}
